@@ -31,10 +31,17 @@ function handleWindowClick(event) {
   }
 }
 
-// Add event listners to buttons //
+// Add event listeners to buttons //
 learnMoreButtons.forEach(button => {
   button.addEventListener("click", handleButtonClick);
 });
 
-// Add event listner to window //
+// Add event listener to window //
 modalOuter.addEventListener("click", handleWindowClick);
+
+// Add event listener to escape key //
+window.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    modalOuter.classList.remove("open");
+  }
+});
