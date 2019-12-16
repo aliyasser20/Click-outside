@@ -11,11 +11,10 @@ function contentAdder(buttonClicked) {
   const imageSrc = card.querySelector("img").src;
   const imageAlt = card.querySelector("img").alt;
   const { description } = card.dataset;
-  const html = `
+  modalInner.innerHTML = `
   <img src="${imageSrc}" alt="${imageAlt}">
   <p>${description}</p>
   `;
-  modalInner.innerHTML = html;
   modalOuter.classList.add("open");
 }
 
